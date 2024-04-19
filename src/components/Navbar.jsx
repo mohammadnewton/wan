@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-evenly items-center px-8 bg-white text-black h-[84px] border">
+    <nav className="flex sticky justify-evenly items-center px-8 bg-white text-black h-[84px] border font-inter">
       <ul className={`flex items-center space-x-16 ${isOpen ? 'hidden' : 'lg:flex'}`}>
         <li className="navbar-link">
           <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>
