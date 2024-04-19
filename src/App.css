@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px) {
+  .navbar-link {
+    display: none;
+  }
+
+  .navbar-logo {
+    display: flex;
+    position: absolute;
+    left: 2rem;
+  }
+}
