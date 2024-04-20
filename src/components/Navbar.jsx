@@ -10,7 +10,11 @@ const Navbar = () => {
 
   return (
     <nav className="flex sticky justify-evenly items-center px-8 bg-white text-black h-[84px] border font-inter">
-      <ul className={`flex items-center space-x-16 ${isOpen ? 'hidden' : 'lg:flex'}`}>
+      <ul
+        className={`flex items-center space-x-16 ${
+          isOpen ? "" : "hidden lg:flex"
+        }`}
+      >
         <li className="navbar-link">
           <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>
             Home
@@ -33,20 +37,32 @@ const Navbar = () => {
           className="w-20 h-auto"
         />
       </div>
-      <ul className={`flex items-center space-x-16 ${isOpen ? 'lg:hidden' : 'lg:flex'}`}>
+      <ul
+        className={`flex items-center space-x-16 ${
+          isOpen ? "" : "hidden lg:flex"
+        }`}
+      >
         <li className="navbar-link">
-          <Link to="/services" className="nav-link" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/services"
+            className="nav-link"
+            onClick={() => setIsOpen(false)}
+          >
             Services
           </Link>
         </li>
         <li className="navbar-link">
-          <Link to="/contact" className="nav-link" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/contact"
+            className="nav-link"
+            onClick={() => setIsOpen(false)}
+          >
             Contact
           </Link>
         </li>
       </ul>
       <button
-        className={`lg:hidden ${isOpen ? 'fixed right-4' : 'absolute right-4'}`}
+        className={`lg:hidden ${isOpen ? "fixed right-4" : "absolute right-4"}`}
         onClick={toggleMenu}
         aria-label={isOpen ? "Close navigation" : "Open navigation"}
       >
