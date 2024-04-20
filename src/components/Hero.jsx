@@ -41,6 +41,7 @@ function Hero() {
             Welcome to Wan Styling I help Women find their Everyday Style
           </motion.p>
           <motion.button
+            whileHover={{ scale: 1.1, delay: 0.2 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
