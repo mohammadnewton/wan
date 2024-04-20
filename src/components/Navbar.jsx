@@ -6,30 +6,16 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    // Prevent scrolling when the menu is open
+    if (!isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   };
 
   return (
-    <nav className="flex sticky justify-evenly items-center px-8 bg-white text-black h-[84px] border font-inter">
-      <ul
-        className={`flex items-center space-x-16 ${
-          isOpen ? "" : "hidden lg:flex"
-        }`}
-      >
-        <li className="navbar-link">
-          <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>
-            Home
-          </Link>
-        </li>
-        <li className="navbar-link">
-          <Link
-            to="/transformations"
-            className="nav-link"
-            onClick={() => setIsOpen(false)}
-          >
-            Transformations
-          </Link>
-        </li>
-      </ul>
+    <nav className="flex sticky justify-between items-center px-8 bg-white text-black h-[84px] border font-inter">
       <div className="navbar-logo lg:static absolute left-2">
         <img
           src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bG9nb3xlbnwwfDB8MHx8fDA%3D"
@@ -37,30 +23,6 @@ const Navbar = () => {
           className="w-20 h-auto"
         />
       </div>
-      <ul
-        className={`flex items-center space-x-16 ${
-          isOpen ? "" : "hidden lg:flex"
-        }`}
-      >
-        <li className="navbar-link">
-          <Link
-            to="/services"
-            className="nav-link"
-            onClick={() => setIsOpen(false)}
-          >
-            Services
-          </Link>
-        </li>
-        <li className="navbar-link">
-          <Link
-            to="/contact"
-            className="nav-link"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
       <button
         className={`lg:hidden ${isOpen ? "fixed right-4" : "absolute right-4"}`}
         onClick={toggleMenu}
@@ -81,6 +43,44 @@ const Navbar = () => {
           />
         </svg>
       </button>
+      <ul
+        className={`absolute top-[84px] left-0 right-0 bg-white z-10 flex flex-col items-center space-y-4 lg:flex lg:space-y-0 lg:space-x-16 lg:static ${
+          isOpen ? "flex h-screen" : "hidden lg:flex"
+        }`}
+      >
+        <li className="navbar-link">
+          <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>
+            Home
+          </Link>
+        </li>
+        <li className="navbar-link">
+          <Link
+            to="/transformations"
+            className="nav-link"
+            onClick={() => setIsOpen(false)}
+          >
+            Transformations
+          </Link>
+        </li>
+        <li className="navbar-link">
+          <Link
+            to="/services"
+            className="nav-link"
+            onClick={() => setIsOpen(false)}
+          >
+            Services
+          </Link>
+        </li>
+        <li className="navbar-link">
+          <Link
+            to="/contact"
+            className="nav-link"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 };
