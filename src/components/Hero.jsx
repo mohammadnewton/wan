@@ -1,24 +1,28 @@
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import heroImage from "../assets/hero.svg";
 
 function Hero() {
-  const [isMounted, setIsMounted] = useState(false);
+  const { ref, inView } = useInView();
+  const controls = useAnimation();
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
 
   return (
     <motion.section
+      ref={ref}
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={controls}
       transition={{ duration: 0.8, delay: 0.2 }}
       className="flex justify-end h-[90vh] bg-cover pr-48"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
-      {isMounted && (
-        <motion.div
+      <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -50,7 +54,6 @@ function Hero() {
             Explore Our Services
           </motion.button>
         </motion.div>
-      )}
     </motion.section>
   );
 }
