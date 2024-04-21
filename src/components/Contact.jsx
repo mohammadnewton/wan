@@ -1,5 +1,5 @@
-import mapMarker from '../assets/map-marker.svg';
-import mailIcon from "../assets/envelope.svg"
+import mapMarker from "../assets/map-marker.svg";
+import mailIcon from "../assets/envelope.svg";
 
 function Contact() {
   return (
@@ -14,42 +14,45 @@ function Contact() {
       <div className="contact-us">
         <h3>Send us a Message</h3>
         <form action="#">
-          <label>Full Name<em>&#x2a;</em></label
-          ><input
+          <label>
+            Full Name<em>&#x2a;</em>
+          </label>
+          <input
             id=""
             name=""
             required=""
             type="text"
             placeholder="Adam Gelius"
           />
-          <label>Email<em>&#x2a;</em></label
-          ><input
+          <label>
+            Email<em>&#x2a;</em>
+          </label>
+          <input
             id=""
             name=""
             required=""
             type="email"
             placeholder="example@yourmail.com"
           />
-          <label>Phone</label
-          ><input
+          <label>Phone</label>
+          <input
             id=""
             name=""
             type="tel"
-            required = ""
+            required=""
             placeholder="+885 1254 5211 552"
           />
-          <label>Message<em>&#x2a;</em></label
-          ><input
-          id=""
-          name=""
-          required=""
-          type="text"
-          placeholder="type your message here"
-        /><button
-            id="customerOrder"
-          >
-            Send
-          </button>
+          <label>
+            Message<em>&#x2a;</em>
+          </label>
+          <input
+            id=""
+            name=""
+            required=""
+            type="text"
+            placeholder="type your message here"
+          />
+          <button id="customerOrder">Send</button>
         </form>
       </div>
       <div className="social">
@@ -64,12 +67,15 @@ function Contact() {
           <img src={mailIcon} alt="Mail Envelope Icon" />
           <div className="detail">
             <h3>How Can We Help?</h3>
-            <p>info@yourdomain.com <br />contact@yourdomain.com</p>
+            <p>
+              info@yourdomain.com <br />
+              contact@yourdomain.com
+            </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
