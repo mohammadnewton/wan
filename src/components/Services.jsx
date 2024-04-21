@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import styling from "../assets/Rectangle.svg";
 import online from "../assets/Rectangle2.svg";
 import wardrobe from "../assets/Rectangle3.svg";
@@ -14,8 +16,17 @@ const childVariants = {
 };
 
 function Services() {
+  const { ref, inView } = useInView();
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <section className="h-[70vh] flex flex-col justify-center items-start px-12 lg:px-60">
+    <section ref={ref} className="h-[70vh] flex flex-col justify-center items-start px-12 lg:px-60">
       <motion.h1
         className="text-4xl font-bold text-black"
         initial="hidden"
