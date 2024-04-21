@@ -1,10 +1,20 @@
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import backVideo from '../assets/back.mp4';
 
 function Notice() {
-  return (
-    <section className="h-[30vh] relative overflow-hidden">
+  const { ref, inView } = useInView();
+  const controls = useAnimation();
 
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
+
+  return (
+    <section ref={ref} className="h-[30vh] relative overflow-hidden">
       <video className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop>
         <source src={backVideo} type="video/mp4" />
       </video>
