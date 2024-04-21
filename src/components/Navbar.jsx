@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import wan from "../assets/logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,14 +18,18 @@ const Navbar = () => {
         }`}
       >
         <li className="navbar-link">
-          <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/"
+            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </Link>
         </li>
         <li className="navbar-link">
           <Link
             to="/transformations"
-            className="nav-link"
+            className={`nav-link ${location.pathname === '/transformations' ? 'active' : ''}`}
             onClick={() => setIsOpen(false)}
           >
             Transformations
@@ -32,7 +38,7 @@ const Navbar = () => {
       </ul>
       <div className="navbar-logo lg:static absolute left-2">
         <img
-          src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bG9nb3xlbnwwfDB8MHx8fDA%3D"
+          src={wan}
           alt="Company Logo"
           className="w-20 h-auto"
         />
@@ -45,7 +51,7 @@ const Navbar = () => {
         <li className="navbar-link">
           <Link
             to="/services"
-            className="nav-link"
+            className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
             onClick={() => setIsOpen(false)}
           >
             Services
@@ -54,7 +60,7 @@ const Navbar = () => {
         <li className="navbar-link">
           <Link
             to="/contact"
-            className="nav-link"
+            className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
             onClick={() => setIsOpen(false)}
           >
             Contact

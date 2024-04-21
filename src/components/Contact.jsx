@@ -31,8 +31,8 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        <h3>CONTACT US</h3>
-        <h2>
+        <h3 className="font-inter text-[13.33px] font-semibold">CONTACT US</h3>
+        <h2 className="font-poly font-normal text-[40px]">
           Let&apos;s talk about <br />
           Love to hear from you
         </h2>
@@ -43,7 +43,7 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <h3>Send us a Message</h3>
+        <h3 className="font-poly text-[20px] font-normal">Send us a Message</h3>
         <form action="#">
           <form action="#">
             <label>

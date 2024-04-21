@@ -28,7 +28,7 @@ function Notice() {
         transition={{ duration: 1 }}
       >
         <motion.h1 
-          className="text-4xl font-bold" 
+          className="text-[40px] font-normal font-poly" 
           whileHover={{ scale: 1.1 }}
         >
           &quot;Dress to be remembered
