@@ -104,6 +104,11 @@
   gap: 5rem;
 }
 
+.social img {
+  width: 31px;
+  height: 31px;
+}
+
 .location {
   display: flex;
   justify-content: space-between;

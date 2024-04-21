@@ -1,4 +1,5 @@
-
+import mapMarker from '../assets/map-marker.svg';
+import mailIcon from "../assets/envelope.svg"
 
 function Contact() {
   return (
@@ -53,14 +54,14 @@ function Contact() {
       </div>
       <div className="social">
         <div className="location">
-          <i className="fa-solid fa-location-dot"></i>
+          <img src={mapMarker} alt="Map Marker Icon" />
           <div className="detail">
             <h3>Our Location</h3>
             <p>401 Broadway, 24th Floor, Orchard Cloud View, London</p>
           </div>
         </div>
         <div className="mail">
-          <i className="fa-regular fa-envelope"></i>
+          <img src={mailIcon} alt="Mail Envelope Icon" />
           <div className="detail">
             <h3>How Can We Help?</h3>
             <p>info@yourdomain.com <br />contact@yourdomain.com</p>
