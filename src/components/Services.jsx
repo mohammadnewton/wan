@@ -30,7 +30,7 @@ function Services() {
   }, [controls]);
 
   return (
-    <motion.section className="h-[70vh] flex flex-col justify-center items-start px-12 py-60 lg:py-12 lg:px-60" animate={controls}>
+    <motion.section className="h-[70vh] bg-[#f9f1eb] flex flex-col justify-center items-start px-12 py-60 lg:py-12 lg:px-60" animate={controls}>
       <motion.h1
         className="text-[28px] font-poly font-light text-black"
         initial="hidden"
