@@ -1,4 +1,4 @@
-import transformationBg from '../assets/transformation-bg.png';
+import transformationBg from '../../assets/transformation-bg.png';
 
 function TransformationsHome() {
   return (

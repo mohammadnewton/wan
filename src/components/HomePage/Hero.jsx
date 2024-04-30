@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import heroImage from "../assets/hero.svg";
+import heroImage from "../../assets/hero.svg";
 
 function Hero() {
   const controls = useAnimation();

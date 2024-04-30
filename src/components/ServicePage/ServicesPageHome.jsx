@@ -1,4 +1,4 @@
-import servicesBg  from '../assets/services-bg.png'
+import servicesBg  from '../../assets/services-bg.png'
 
 function ServicesPageHome() {
   return (

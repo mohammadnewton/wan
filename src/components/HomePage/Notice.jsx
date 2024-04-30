@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import backVideo from '../assets/back.mp4';
+import backVideo from '../../assets/back.mp4';
 
 function Notice() {
   const { ref, inView } = useInView();
