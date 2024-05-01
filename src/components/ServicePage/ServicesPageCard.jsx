@@ -4,8 +4,8 @@ import image3 from '../../assets/image3.png'
 
 function ServicesPageCard() {
   return (
-    <section className="grid place-items-center grid-cols-1 gap-32 my-[8rem]">
-      <div className="flex flex-col md:flex-row gap-8 w-[1067px] h-[300px]">
+    <section className="grid place-items-center grid-cols-1 md:gap-32 my-0 md:my-[8rem]">
+      <div className="flex flex-col md:flex-row gap-8 p-4 md:p-0 w-full h-auto md:w-[1067px] md:h-[300px]">
         <img className="w-[374px] h-[418px] object-cover" src={image1} alt="" />
         <div className='grid gap-2 place-items-start'>
           <h2 className="text-[21px] text-[#B3550A] font-roboto font-semibold mb-2">Our Services</h2>
@@ -15,7 +15,7 @@ function ServicesPageCard() {
           <button className="text-[#B3550A] font-roboto text-[16px] border border-[#B3550A] px-4 py-2 mt-4">Book Now</button>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row-reverse items-center gap-8 w-[1067px] h-[300px]">
+      <div className="flex flex-col md:flex-row-reverse items-center gap-8  p-4 md:p-0 w-full h-auto md:w-[1067px] md:h-[300px]">
         <img className="w-[524px] h-[275px] object-cover" src={image2} alt="" />
         <div className='grid gap-2 place-items-start'>
           <h3 className="text-[23px] font-poly font-normal">2. Wardrobe Styling</h3>
@@ -24,7 +24,7 @@ function ServicesPageCard() {
           <button className="text-[#B3550A] font-roboto text-[16px] border border-[#B3550A] px-4 py-2 mt-4">Book Now</button>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center gap-8 w-[1067px] h-[300px]">
+      <div className="flex flex-col md:flex-row items-center gap-8  p-4 md:p-0 w-full h-auto md:w-[1067px] md:h-[300px]">
         <img className="w-[374px] h-[418px] object-cover" src={image3} alt="" />
         <div className='grid gap-2 place-items-start'>
           <h3 className="text-[23px] font-poly font-normal">3. Make your customers happy by giving services.</h3>
