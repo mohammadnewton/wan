@@ -28,10 +28,10 @@ function Notice() {
         transition={{ duration: 1 }}
       >
         <motion.h1 
-          className="text-[40px] font-normal font-poly" 
+          className="text-[40px] font-normal font-poly text-center"
           whileHover={{ scale: 1.1 }}
         >
-          &quot;Dress to be remembered
+          &quot;Dress to be remembered&quot;
         </motion.h1>
       </motion.div>
     </section>

@@ -24,13 +24,13 @@ function Gallery() {
 
   return (
     <section className="w-full m-0 p-0">
-      <motion.div className="flex flex-wrap gap-0" animate={controls}>
+      <motion.div className="flex flex-wrap gap-0 gallery" animate={controls}>
         {images.map((image, index) => (
           <motion.img
             key={index}
             src={image}
             alt=""
-            className="w-[302px] h-[270px] object-cover"
+            className="w-full md:w-[302px] md:h-[270px] object-cover"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
