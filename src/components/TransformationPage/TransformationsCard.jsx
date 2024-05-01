@@ -30,7 +30,7 @@ const cardData = [
 function TransformationsCard() {
   return (
     <section className='grid place-items-center'>
-      <div className="p-16 grid grid-cols-1 md:grid-cols-2 place-items-center gap-4">
+      <div className="p-8 md:p-16 grid grid-cols-1 md:grid-cols-2 place-items-center gap-4 ">
         {cardData.map((card, index) => (
           <div key={index} className="flex bg-white overflow-hidden shadow-md w-[551px] h-[443px] gap-2">
             <img className="w-full object-cover object-center" src={card.image} alt="Card" />
