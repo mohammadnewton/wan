@@ -14,7 +14,7 @@ function Notice() {
   }, [controls, inView]);
 
   return (
-    <section ref={ref} className="h-[30vh] relative overflow-hidden">
+    <section ref={ref} className="h-[50vh] relative overflow-hidden">
       <video className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop>
         <source src={backVideo} type="video/mp4" />
       </video>
