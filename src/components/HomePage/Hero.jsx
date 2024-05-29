@@ -47,7 +47,7 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-[20px] font-roboto font-light w-screen/2 md:w-4/5 text-center md:text-start"
         >
-          Welcome to Wan Styling I help Women find their Everyday Style
+          Welcome to WAN Styling I help Women find their Everyday Style
         </motion.p>
         <motion.button
           whileHover={{ scale: 1.1, delay: 0.2 }}
