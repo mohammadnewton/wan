@@ -1,31 +1,4 @@
-import cardImage from '../../assets/cardImage.png';
-
-const cardData = [
-  {
-    image: cardImage,
-    title: "Njeeri's Transformation Journey",
-    description: 'Lorem ipsum dolor sit amet consectetur. Porta justo quis ac congue egestas mattis porttitor donec. Fringilla convallis imperdiet cursus ac vivamus id. Quam nibh dapibus ultrices sed mi nec. Mollis orci elit tincidunt pellentesque quis sit accumsan.',
-    link: 'Read More',
-  },
-  {
-    image: cardImage,
-    title: "Njeeri's Transformation Journey",
-    description: 'Lorem ipsum dolor sit amet consectetur. Porta justo quis ac congue egestas mattis porttitor donec. Fringilla convallis imperdiet cursus ac vivamus id. Quam nibh dapibus ultrices sed mi nec. Mollis orci elit tincidunt pellentesque quis sit accumsan.',
-    link: 'Read More',
-  },
-  {
-    image: cardImage,
-    title: "Njeeri's Transformation Journey",
-    description: 'Lorem ipsum dolor sit amet consectetur. Porta justo quis ac congue egestas mattis porttitor donec. Fringilla convallis imperdiet cursus ac vivamus id. Quam nibh dapibus ultrices sed mi nec. Mollis orci elit tincidunt pellentesque quis sit accumsan.',
-    link: 'Read More',
-  },
-  {
-    image: cardImage,
-    title: "Njeeri's Transformation Journey",
-    description: 'Lorem ipsum dolor sit amet consectetur. Porta justo quis ac congue egestas mattis porttitor donec. Fringilla convallis imperdiet cursus ac vivamus id. Quam nibh dapibus ultrices sed mi nec. Mollis orci elit tincidunt pellentesque quis sit accumsan.',
-    link: 'Read More',
-  }
-];
+import { cardData } from "../data";
 
 function TransformationsCard() {
   return (

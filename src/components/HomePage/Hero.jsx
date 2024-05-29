@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import heroImage from "../../assets/hero.svg";
+import { heroData } from '../data';
 
 function Hero() {
   const controls = useAnimation();
@@ -19,13 +19,15 @@ function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [controls]);
 
+  const { image, title, description, buttonText } = heroData; // Destructure hero data
+
   return (
     <motion.section
       initial={{ opacity: 1, y: 0 }}
       // animate={controls}
       transition={{ duration: 0.5 }}
       className="flex justify-end h-[90vh] bg-cover pr-48"
-      style={{ backgroundImage: `url(${heroImage})` }}
+      style={{ backgroundImage: `url(${image})` }}
       >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -39,7 +41,7 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-[40px] font-poly font-normal"
         >
-          Hello I&apos;m Winnie
+          {title}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -47,7 +49,7 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-[20px] font-roboto font-light w-screen/2 md:w-4/5 text-center md:text-start"
         >
-          Welcome to WAN Styling I help Women find their Everyday Style
+          {description}
         </motion.p>
         <motion.button
           whileHover={{ scale: 1.1, delay: 0.2 }}
@@ -56,7 +58,7 @@ function Hero() {
           transition={{ duration: 0.8, delay: 1 }}
           className="bg-[#B3550A] font-roboto text-white px-2 py-4 md:px-10"
         >
-          Explore Our Services
+          {buttonText}
         </motion.button>
       </motion.div>
     </motion.section>

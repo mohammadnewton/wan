@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import styling from "../assets/Rectangle.svg";
-import online from "../assets/Rectangle2.svg";
-import wardrobe from "../assets/Rectangle3.svg";
+import { servicesData } from "./data";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -31,7 +29,7 @@ function Services() {
   return (
     <motion.section
       className="relative overflow-hidden bg-[#f9f1eb] px-6 py-12 md:px-12 lg:px-24 xl:px-32"
-      style={{ zIndex: 1 }} // Ensure the component is below other components
+      style={{ zIndex: 1 }}
       animate={controls}
     >
       <motion.h1
@@ -43,11 +41,7 @@ function Services() {
         Explore Our Services
       </motion.h1>
       <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
-        {[
-          { image: styling, title: "Styling Package", description: "Our stylists will help you find your signature style through personalized appointments." },
-          { image: online, title: "Online Shopping Assist", description: "Our stylists will help you find your signature style through personalized appointments." },
-          { image: wardrobe, title: "Custom Wardrobe", description: "Our stylists will help you find your signature style through personalized appointments." },
-        ].map((service, index) => (
+        {servicesData.map((service, index) => (
           <motion.div
             key={index}
             className="p-4 flex flex-col justify-center items-center gap-6 bg-cover bg-center bg-no-repeat"

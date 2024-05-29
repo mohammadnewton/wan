@@ -1,12 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import image1 from "../assets/rect1.svg";
-import image2 from "../assets/rect2.svg";
-import image3 from "../assets/rect3.svg";
-import image4 from "../assets/rect4.svg";
-import image5 from "../assets/rect6.svg";
-
-const images = [image1, image2, image3, image4, image5];
+import { galleryImages } from "./data";
 
 function Gallery() {
   const controls = useAnimation();
@@ -25,7 +19,7 @@ function Gallery() {
   return (
     <section className="w-full m-0 p-0">
       <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 m-0 p-0 gap-0" animate={controls}>
-        {images.map((image, index) => (
+        {galleryImages.map((image, index) => (
           <motion.img
             key={index}
             src={image}
@@ -42,4 +36,3 @@ function Gallery() {
 }
 
 export default Gallery;
-

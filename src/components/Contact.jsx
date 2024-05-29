@@ -1,7 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import mapMarker from "../assets/map-marker.svg";
-import mailIcon from "../assets/envelope.svg";
+import { contactFormData, contactInfo } from "./data";
 
 function Contact() {
   const controls = useAnimation();
@@ -21,7 +20,7 @@ function Contact() {
     <motion.div
       className="contact"
       initial={{ opacity: 0 }}
-      animate={ controls }
+      animate={controls}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
@@ -31,10 +30,9 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        <h3 className="font-inter text-[13.33px] font-semibold">CONTACT US</h3>
+        <h3 className="font-inter text-[13.33px] font-semibold">{contactFormData.heading}</h3>
         <h2 className="font-poly font-normal text-[40px]">
-          Let&apos;s talk about <br />
-          Love to hear from you
+          {contactFormData.subHeading}
         </h2>
       </motion.div>
       <motion.div
@@ -43,49 +41,22 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <h3 className="font-poly text-[20px] font-normal">Send us a Message</h3>
+        <h3 className="font-poly text-[20px] font-normal">{contactFormData.formTitle}</h3>
         <form action="#">
-          <form action="#">
-            <label>
-              Full Name<em>&#x2a;</em>
-            </label>
-            <input
-              id=""
-              name=""
-              required=""
-              type="text"
-              placeholder="Adam Gelius"
-            />
-            <label>
-              Email<em>&#x2a;</em>
-            </label>
-            <input
-              id=""
-              name=""
-              required=""
-              type="email"
-              placeholder="example@yourmail.com"
-            />
-            <label>Phone</label>
-            <input
-              id=""
-              name=""
-              type="tel"
-              required=""
-              placeholder="+885 1254 5211 552"
-            />
-            <label>
-              Message<em>&#x2a;</em>
-            </label>
-            <input
-              id=""
-              name=""
-              required=""
-              type="text"
-              placeholder="type your message here"
-            />
-            <button id="customerOrder">Send</button>
-          </form>
+          {contactFormData.fields.map((field, index) => (
+            <div key={index}>
+              <label>
+                {field.label}
+                {field.required && <em>&#x2a;</em>}
+              </label>
+              <input
+                type={field.type}
+                placeholder={field.placeholder}
+                required={field.required}
+              />
+            </div>
+          ))}
+          <button id="customerOrder">{contactFormData.buttonText}</button>
         </form>
       </motion.div>
       <motion.div
@@ -95,19 +66,23 @@ function Contact() {
         transition={{ delay: 0.6, duration: 0.5 }}
       >
         <div className="location">
-          <img src={mapMarker} alt="Map Marker Icon" />
+          <img src={contactInfo.location.icon} alt="Map Marker Icon" />
           <div className="detail">
-            <h3>Our Location</h3>
-            <p>401 Broadway, 24th Floor, Orchard Cloud View, London</p>
+            <h3>{contactInfo.location.title}</h3>
+            <p>{contactInfo.location.detail}</p>
           </div>
         </div>
         <div className="mail">
-          <img src={mailIcon} alt="Mail Envelope Icon" />
+          <img src={contactInfo.mail.icon} alt="Mail Envelope Icon" />
           <div className="detail">
-            <h3>How Can We Help?</h3>
+            <h3>{contactInfo.mail.title}</h3>
             <p>
-              info@yourdomain.com <br />
-              contact@yourdomain.com
+              {contactInfo.mail.detail.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </p>
           </div>
         </div>
